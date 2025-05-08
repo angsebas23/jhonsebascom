@@ -3,48 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ropa Biodegradable</title>
+  <title>🛍️ Ropa Biodegradable</title>
   <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
   <header>
     <h1>🛍️ Ropa Biodegradable</h1>
-    <label for="categoria">Filtrar por categoría:</label>
-    <select id="categoria" onchange="filtrarPorCategoria()">
+    <p>Bienvenido a la tienda creada por Jhon Sebastián Angulo González.</p>
+    <!-- Filtro por categoría -->
+    <label for="filtro-categoria">Filtrar por categoría:</label>
+    <select id="filtro-categoria" onchange="filtrarProductos()">
       <option value="todos">Todos</option>
-      <option value="Camisetas">Camisetas</option>
-      <option value="Pantalones">Pantalones</option>
-      <option value="Zapatos">Zapatos</option>
-      <option value="Accesorios">Accesorios</option>
-      <option value="Chaquetas">Chaquetas</option>
+      <option value="camiseta">Camiseta</option>
+      <option value="pantalón">Pantalón</option>
+      <option value="zapatos">Zapatos</option>
+      <option value="gorra">Gorra</option>
+      <option value="mochila">Mochila</option>
+      <option value="chaqueta">Chaqueta</option>
     </select>
-    <p>Bienvenido a mi tienda de ropa biodegradable. Soy Jhon Sebastian Angulo González, desarrollador de este proyecto.</p>
   </header>
 
-  <section id="productos"></section>
+  <main>
+    <!-- Productos -->
+    <section id="productos"></section>
 
-  <section class="carrito">
-    <h2>🧾 Carrito de Compras</h2>
-    <p><strong>Productos en carrito: <span id="cantidad-carrito">0</span></strong></p>
-    <ul id="lista-carrito"></ul>
-    <p><strong>Total: $<span id="total">0.00</span></strong></p>
-    <button class="vaciar" onclick="vaciarCarrito()">🧼 Vaciar Carrito</button>
-    <button class="finalizar" onclick="finalizarCompra()">✅ Finalizar Compra</button>
+    <!-- Carrito -->
+    <aside class="carrito">
+      <h2>🧾 Carrito de Compras</h2>
+      <ul id="lista-carrito"></ul>
+      <p><strong>Total: $<span id="total">0.00</span></strong></p>
+      <button class="vaciar" onclick="vaciarCarrito()">🧼 Vaciar Carrito</button>
 
-    <div class="pago">
-      <h3>💳 Método de pago</h3>
-      <div id="paypal-button-container" style="margin-top: 10px; display: none;"></div>
-    </div>
-  </section>
+      <!-- Botones de pago -->
+      <div class="pagos">
+        <div id="paypal-button-container"></div>
+        <h3>💳 Pago con tarjeta o transferencia</h3>
+        <form id="formulario-pago" onsubmit="procesarPago(event)">
+          <input type="text" placeholder="Nombre completo" required /><br />
+          <input type="email" placeholder="Correo electrónico" required /><br />
+          <input type="text" placeholder="Número de tarjeta o código transferencia" required /><br />
+          <button type="submit">Enviar pago</button>
+        </form>
+      </div>
+    </aside>
+  </main>
 
-  <!-- PayPal SDK (usa tu client-id real o de pruebas) -->
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD&components=buttons,funding-eligibility"></script>
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-  <!-- PayPal SDK (usa tu client-id real o de pruebas) -->
   <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD&components=buttons,funding-eligibility"></script>
   <script src="script.js"></script>
 </body>
