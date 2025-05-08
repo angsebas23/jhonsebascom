@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ropa Biodegradable</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <header>
+    <h1>🛍️ Ropa Biodegradable</h1>
+    <label for="categoria">Filtrar por categoría:</label>
+    <select id="categoria" onchange="filtrarPorCategoria()">
+      <option value="todos">Todos</option>
+      <option value="Camisetas">Camisetas</option>
+      <option value="Pantalones">Pantalones</option>
+      <option value="Zapatos">Zapatos</option>
+      <option value="Accesorios">Accesorios</option>
+      <option value="Chaquetas">Chaquetas</option>
+    </select>
+    <p>Bienvenido a mi tienda de ropa biodegradable. Soy Jhon Sebastian Angulo González, desarrollador de este proyecto.</p>
+  </header>
+
+  <section id="productos"></section>
+
+  <section class="carrito">
+    <h2>🧾 Carrito de Compras</h2>
+    <p><strong>Productos en carrito: <span id="cantidad-carrito">0</span></strong></p>
+    <ul id="lista-carrito"></ul>
+    <p><strong>Total: $<span id="total">0.00</span></strong></p>
+    <button class="vaciar" onclick="vaciarCarrito()">🧼 Vaciar Carrito</button>
+    <button class="finalizar" onclick="finalizarCompra()">✅ Finalizar Compra</button>
+
+    <div class="pago">
+      <h3>💳 Método de pago</h3>
+      <div id="paypal-button-container" style="margin-top: 10px; display: none;"></div>
+    </div>
+  </section>
+
+  <!-- PayPal SDK (usa tu client-id real o de pruebas) -->
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD&components=buttons,funding-eligibility"></script>
+  <script src="script.js"></script>
+</body>
+</html>
