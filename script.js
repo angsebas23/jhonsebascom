@@ -194,3 +194,4 @@ if (window.paypal) {
 // Inicialización
 filtrarPorCategoria();
 cargarCarrito();
+
